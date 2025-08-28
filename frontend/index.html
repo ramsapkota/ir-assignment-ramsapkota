@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Information Retrieval | Assignment | Ram Sapkota</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🕵%3C/text%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Compact Header -->
+    <header class="header">
+      <div class="header-content">
+        <div class="brand">
+          <h1>IR Assignment</h1>
+          <span class="author">Ram Sapkota</span>
+        </div>
+
+        <nav class="nav-tabs">
+          <button class="nav-tab active" data-tab="search-engine">Search</button>
+          <button class="nav-tab" data-tab="doc-classification">Classification</button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- SEARCH ENGINE TAB -->
+      <div id="search-engine" class="tab-content active">
+        <!-- Google-style Search Section -->
+        <section class="search-section">
+          <div class="search-container">
+            <form id="search-form" class="search-form">
+              <div class="search-box">
+                <input id="search-input" type="text" placeholder="Search academic publications..." autocomplete="off" aria-label="Search query" />
+                <div class="search-actions">
+                  <button type="submit" class="search-btn" aria-label="Search">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <circle cx="11" cy="11" r="8"></circle>
+                      <path d="21 21-4.35-4.35"></path>
+                    </svg>
+                  </button>
+                  <button type="button" id="clear-btn" class="clear-btn" aria-label="Clear">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <line x1="18" y1="6" x2="6" y2="18"></line>
+                      <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </form>
+
+            <!-- Engine Toggle (Hidden by default) -->
+            <div class="engine-selector hidden">
+              <button id="btn-bm25" class="engine-btn active">BM25</button>
+              <button id="btn-tfidf" class="engine-btn">TF-IDF</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Results Info -->
+        <section class="results-info-section">
+          <div class="results-summary">
+            <span id="results-text">Ready to search</span>
+            <span id="time-pill" class="time-indicator hidden"></span>
+          </div>
+        </section>
+
+        <!-- Results Container -->
+        <section class="results-section">
+          <div id="results-container" class="results-container">
+            <div class="welcome-state">
+              <div class="welcome-icon">🔍</div>
+              <h3>Academic Publication Search</h3>
+              <p>Search through thousands of research papers using advanced algorithms</p>
+            </div>
+          </div>
+
+          <div id="pagination-controls" class="pagination hidden"></div>
+        </section>
+      </div>
+
+      <!-- DOCUMENT CLASSIFICATION TAB -->
+      <div id="doc-classification" class="tab-content hidden">
+        <section class="classification-section">
+          <div class="classification-container">
+            <div class="classification-header">
+              <h2>Text Classification</h2>
+              <p>Classify text into Politics, Business, or Health categories</p>
+              <div class="model-info">
+                <span id="cls-model-chip" class="model-chip hidden">Model: —</span>
+                <span id="cls-time-pill" class="time-indicator hidden">—</span>
+              </div>
+            </div>
+
+            <div class="classification-form">
+              <div class="input-group">
+                <textarea id="cls-input" placeholder="Enter text to classify..." rows="6"></textarea>
+              </div>
+
+              <div class="form-actions">
+                <button id="cls-run" class="btn-primary">Classify</button>
+                <button id="cls-clear" class="btn-secondary">Clear</button>
+                <span id="cls-status" class="status-badge">Ready</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Classification Results -->
+        <section id="cls-result" class="classification-results hidden">
+          <div class="result-header">
+            <h3>Classification Result</h3>
+          </div>
+
+          <div class="result-content">
+            <div class="prediction-display">
+              <div class="prediction-label">
+                <span class="label-text">Category:</span>
+                <span id="cls-label" class="label-value">—</span>
+              </div>
+              <div class="confidence-display">
+                <span class="conf-text">Confidence:</span>
+                <span id="cls-conf" class="conf-value">—</span>
+              </div>
+            </div>
+
+            <div class="probability-chart">
+              <h4>Probability Distribution</h4>
+              <div id="cls-bars" class="probability-bars">
+                <!-- Bars will be inserted here -->
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

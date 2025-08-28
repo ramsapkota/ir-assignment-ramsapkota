@@ -1,0 +1,94 @@
+{
+  "timestamp": "2025-08-28T01:05:21.262127Z",
+  "labels": [
+    "politics",
+    "business",
+    "health"
+  ],
+  "class_counts": {
+    "politics": 1000,
+    "business": 1000,
+    "health": 1000
+  },
+  "split": {
+    "train": 2400,
+    "test": 600,
+    "test_size": 0.2
+  },
+  "best_model": "nb",
+  "per_model": {
+    "nb": {
+      "cv": {
+        "cv_f1_macro_mean": 1.0,
+        "cv_f1_macro_std": 0.0,
+        "cv_acc_mean": 1.0,
+        "cv_acc_std": 0.0
+      },
+      "heldout": {
+        "f1_macro": 1.0,
+        "accuracy": 1.0
+      }
+    },
+    "lr": {
+      "cv": {
+        "cv_f1_macro_mean": 1.0,
+        "cv_f1_macro_std": 0.0,
+        "cv_acc_mean": 1.0,
+        "cv_acc_std": 0.0
+      },
+      "heldout": {
+        "f1_macro": 1.0,
+        "accuracy": 1.0
+      }
+    },
+    "svm": {
+      "cv": {
+        "cv_f1_macro_mean": 1.0,
+        "cv_f1_macro_std": 0.0,
+        "cv_acc_mean": 1.0,
+        "cv_acc_std": 0.0
+      },
+      "heldout": {
+        "f1_macro": 1.0,
+        "accuracy": 1.0
+      }
+    }
+  },
+  "cv_best": {
+    "cv_f1_macro_mean": 1.0,
+    "cv_f1_macro_std": 0.0,
+    "cv_acc_mean": 1.0,
+    "cv_acc_std": 0.0
+  },
+  "heldout": {
+    "test_accuracy": 1.0,
+    "test_f1_macro": 1.0,
+    "classification_report": "              precision    recall  f1-score   support\n\n    politics     1.0000    1.0000    1.0000       200\n    business     1.0000    1.0000    1.0000       200\n      health     1.0000    1.0000    1.0000       200\n\n    accuracy                         1.0000       600\n   macro avg     1.0000    1.0000    1.0000       600\nweighted avg     1.0000    1.0000    1.0000       600\n",
+    "confusion_matrix_labels": [
+      "politics",
+      "business",
+      "health"
+    ],
+    "confusion_matrix": [
+      [
+        200,
+        0,
+        0
+      ],
+      [
+        0,
+        200,
+        0
+      ],
+      [
+        0,
+        0,
+        200
+      ]
+    ]
+  },
+  "notes": {
+    "vectorizer": "TF-IDF word ngrams",
+    "lemmatization": "NLTK WordNet (if installed) in custom tokenizer"
+  }
+}
